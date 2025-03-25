@@ -50,7 +50,8 @@ const MinecraftSlider: React.FC<MinecraftSliderProps> = ({
               #828282 100%)`
           }}
         />
-        <style jsx>{`
+        <style>
+          {`
           input[type=range]::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
@@ -68,7 +69,8 @@ const MinecraftSlider: React.FC<MinecraftSliderProps> = ({
             border: 2px solid black;
             cursor: pointer;
           }
-        `}</style>
+          `}
+        </style>
       </div>
       <div className="flex justify-between mt-1 font-minecraft text-xs text-gray-200">
         <span>{min}</span>
