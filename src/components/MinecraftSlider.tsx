@@ -32,16 +32,16 @@ const MinecraftSlider: React.FC<MinecraftSliderProps> = ({
     <div className={cn("w-full", className)}>
       {label && (
         <div className="flex justify-between mb-2">
-          <label className="font-minecraft text-sm">{label}</label>
-          <span className="font-minecraft text-sm">{value}</span>
+          <label className="font-minecraft text-sm text-white/90">{label}</label>
+          <span className="font-minecraft text-sm text-white/90">{value}</span>
         </div>
       )}
       <div className="relative h-10 flex items-center">
-        {/* Track background */}
-        <div className="absolute w-full h-4 bg-black/50 rounded-sm pixel-border overflow-hidden">
+        {/* Track background - Bedrock style */}
+        <div className="bedrock-slider-track rounded-none w-full">
           {/* Filled part */}
           <div 
-            className="h-full bg-white/20"
+            className="bedrock-slider-fill"
             style={{ width: `${percentage}%` }}
           />
         </div>
@@ -64,13 +64,10 @@ const MinecraftSlider: React.FC<MinecraftSliderProps> = ({
           className="absolute w-full h-10 opacity-0 cursor-pointer z-10"
         />
 
-        {/* Slider handle */}
+        {/* Slider handle - Bedrock style */}
         <div 
-          className="absolute h-8 w-3 bg-white/90 border-2 border-black pointer-events-none z-[1]"
-          style={{ 
-            left: `calc(${percentage}% - 6px)`,
-            boxShadow: '0 0 0 1px rgba(0,0,0,0.05), 0 2px 0 rgba(0,0,0,0.3)'
-          }}
+          className="bedrock-slider-handle"
+          style={{ left: `calc(${percentage}% - 6px)` }}
         />
       </div>
       
