@@ -16,44 +16,35 @@
 
 @layer base {
   :root {
-    --background: 32 31% 10%;
-    --foreground: 39 90% 95%;
+    --background: 210 15% 10%;
+    --foreground: 210 15% 90%;
 
-    --card: 39 60% 30%;
-    --card-foreground: 39 90% 95%;
+    --card: 210 15% 15%;
+    --card-foreground: 210 15% 90%;
 
-    --popover: 39 60% 30%;
-    --popover-foreground: 39 90% 95%;
+    --popover: 210 15% 15%;
+    --popover-foreground: 210 15% 90%;
 
     --primary: 140 40% 40%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 39 60% 20%;
-    --secondary-foreground: 39 90% 95%;
+    --secondary: 210 15% 20%;
+    --secondary-foreground: 210 15% 90%;
 
-    --muted: 39 20% 40%;
-    --muted-foreground: 39 75% 90%;
+    --muted: 210 15% 25%;
+    --muted-foreground: 210 15% 70%;
 
     --accent: 39 70% 50%;
-    --accent-foreground: 39 90% 10%;
+    --accent-foreground: 210 15% 10%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 210 15% 98%;
 
-    --border: 39 40% 25%;
-    --input: 39 40% 25%;
-    --ring: 39 70% 50%;
+    --border: 210 15% 20%;
+    --input: 210 15% 20%;
+    --ring: 210 15% 50%;
 
     --radius: 0px;
-
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   * {
@@ -64,6 +55,7 @@
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
+    image-rendering: pixelated;
   }
 
   /* Minecraft-style pixel border classes */
@@ -97,9 +89,7 @@
     @apply font-minecraft bg-black/20 text-white p-2 pixel-border;
     resize: none;
   }
-}
-
-@layer components {
+  
   .pixelated {
     image-rendering: pixelated;
   }

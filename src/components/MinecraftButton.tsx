@@ -5,6 +5,8 @@ import { cn } from '@/lib/utils';
 interface MinecraftButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary' | 'tertiary';
   size?: 'sm' | 'md' | 'lg';
+  iconLeft?: React.ReactNode;
+  iconRight?: React.ReactNode;
 }
 
 const MinecraftButton: React.FC<MinecraftButtonProps> = ({
@@ -12,6 +14,8 @@ const MinecraftButton: React.FC<MinecraftButtonProps> = ({
   variant = 'primary',
   size = 'md',
   children,
+  iconLeft,
+  iconRight,
   ...props
 }) => {
   const variantClasses = {
@@ -34,11 +38,16 @@ const MinecraftButton: React.FC<MinecraftButtonProps> = ({
         sizeClasses[size],
         'transition-all duration-75 relative',
         'hover:shadow-minecraft focus:outline-none',
+        'transform hover:-translate-y-1 active:translate-y-0',
         className
       )}
       {...props}
     >
-      {children}
+      <div className="flex items-center justify-center gap-2">
+        {iconLeft && <span className="flex-shrink-0">{iconLeft}</span>}
+        <span>{children}</span>
+        {iconRight && <span className="flex-shrink-0">{iconRight}</span>}
+      </div>
     </button>
   );
 };
